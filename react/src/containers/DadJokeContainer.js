@@ -17,24 +17,18 @@ class DadJokeContainer extends Component {
     fetch('https://www.reddit.com/r/dadjokes.json')
       .then(response => response.json())
       .then(responseData => {
-        debugger;
-        this.setState({ dadJokes : responseData.data.children})
-      })
-  }
+        let totalAmount = responseData.data.children.length
+        let jokeChildren = responseData.data.children
+        for (i = 0; i < totalAmount; i++) {
+          this.setState(dadJokes: jokeChildren[i].data);
+          }
+        })
+      }
 
   render() {
-    let randNum = Math.floor(Math.random() * 25)
-    let dadJoke = this.state.dadJokes.map(joke => {
-      return(
-        <DadJoke
-          setup={joke.title}
-          punchline={joke.selftext}
-        />
-      )
-    })
     return(
       <div>
-        <dadJoke />
+        <h1>Hii bitch  </h1>
       </div>
     )
   }
