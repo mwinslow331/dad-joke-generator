@@ -1,31 +1,34 @@
 import React, { Component } from 'react';
+import DadJoke from '../components/DadJoke';
 
 class DadJokeContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
       dadJokes: {}
-      randNum: Math.floor(Math.random() * totalJokes),
     }
   }
 
-  onClick(event) {
-    let dadJoke = "https://www.reddit.com/r/dadjokes.json"
-  }
+  // onClick(event) {
+  //   let dadJoke = "https://www.reddit.com/r/dadjokes.json"
+  // }
 
-  componentDidMount() {
+  componentWillMount() {
     fetch('https://www.reddit.com/r/dadjokes.json')
       .then(response => response.json())
       .then(responseData => {
-        this.setState({ dadJokes : responseData})
-        let totalJokes = this.state.dadJokes.data.children.length
-      })
-  }
+        let totalAmount = responseData.data.children.length
+        let jokeChildren = responseData.data.children
+        for (i = 0; i < totalAmount; i++) {
+          this.setState(dadJokes: jokeChildren[i].data);
+          }
+        })
+      }
 
   render() {
     return(
       <div>
-        <h1> BoooYA </h1>
+        <h1>Hii bitch  </h1>
       </div>
     )
   }
