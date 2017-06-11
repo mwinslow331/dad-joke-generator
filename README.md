@@ -1,7 +1,9 @@
 # Dad Joke Generator
 
 Press a button, get a Dad Joke - simple.
+
 Rails Backend, React on the Front
+
 Dad Jokes provided by the Reddit /r/dadjoke API
 
 ## Instructions
