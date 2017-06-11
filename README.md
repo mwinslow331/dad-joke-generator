@@ -1,24 +1,14 @@
-# README
+# Dad Joke Generator
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Press a button, get a Dad Joke - simple.
 
-Things you may want to cover:
+## Instructions
+* Clone
+* Run `bundle`
+* Run `npm install`
+* From the console `rails s` & in another tab `npm start`
+* Navigate to `localhost:3000`
 
-* Ruby version
+## Live Site Hosted on Heroku Server
 
-* System dependencies
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
