@@ -14,10 +14,10 @@ class DadJokeContainer extends Component {
   // }
 
   componentWillMount() {
-    fetch('https://github.com/ChrisMcKenzie/dadjokes/blob/gh-pages/v1/puns.json')
+    fetch('https://raw.githubusercontent.com/ChrisMcKenzie/dadjokes/gh-pages/v1/puns.json')
       .then(response => response.json())
       .then(responseData => {
-        debugger;
+        this.setState({ dadJokes: responseData})
       })
       }
 
