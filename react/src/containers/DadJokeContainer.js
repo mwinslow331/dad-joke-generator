@@ -7,7 +7,11 @@ class DadJokeContainer extends Component {
     this.state = {
       dadJokes: {},
       rand: 0,
-      selectedDadJoke: {}
+      selectedDadJoke: {
+        level: "1",
+        name: "ashes",
+        joke: "When the window fell into the incinerator, it was a pane in the ash to retrieve."
+        }
     }
     this.handleRandomJoke = this.handleRandomJoke.bind(this)
   }
@@ -33,8 +37,10 @@ class DadJokeContainer extends Component {
     return(
       <div className='row'>
         <div className='columns small-12 text-center small-centered'>
-          <h4 className='jokes'>{this.state.selectedDadJoke.joke}</h4>
-          <div className='button joke-button' onClick={this.handleRandomJoke}>Click for Random Dad Joke!</div>
+          <div className='jokes'>
+            <h4>{this.state.selectedDadJoke.joke}</h4>
+          </div>
+          <div className='joke-button' onClick={this.handleRandomJoke}>Click for Random Dad Joke!</div>
         </div>
       </div>
     )
