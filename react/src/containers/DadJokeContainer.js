@@ -5,15 +5,23 @@ class DadJokeContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      dadJokes: {}
+      dadJokes: {},
+      rand: 0,
+      selectedDadJoke: {}
     }
+    this.handleRandomJoke = this.handleRandomJoke.bind(this)
   }
 
-  // onClick(event) {
-  //   let dadJoke = "https://www.reddit.com/r/dadjokes.json"
-  // }
+  handleRandomJoke(event) {
+    let totalDadJokes = this.state.dadJokes.length
+    let randNum = Math.floor((Math.random()) * totalDadJokes)
+    this.setState({
+      rand: randNum,
+      selectedDadJoke: this.state.dadJokes[randNum]
+    })
+  }
 
-  componentWillMount() {
+  componentDidMount() {
     fetch('https://raw.githubusercontent.com/ChrisMcKenzie/dadjokes/gh-pages/v1/puns.json')
       .then(response => response.json())
       .then(responseData => {
@@ -24,7 +32,8 @@ class DadJokeContainer extends Component {
   render() {
     return(
       <div>
-        <h1>Hello Darkness, My Old Friend</h1>
+        <h4>{this.state.selectedDadJoke.joke}</h4>
+        <button onClick={this.handleRandomJoke}>Click for Random Dad Joke!</button>
       </div>
     )
   }
