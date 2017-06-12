@@ -14,12 +14,11 @@ class DadJokeContainer extends Component {
   // }
 
   componentWillMount() {
-    fetch('https://www.reddit.com/r/dadjokes.json')
+    fetch('https://github.com/ChrisMcKenzie/dadjokes/blob/gh-pages/v1/puns.json')
       .then(response => response.json())
       .then(responseData => {
-        let totalAmount = responseData.data.children.length
-        let jokeChildren = responseData.data.children
-        })
+        debugger;
+      })
       }
 
   render() {
