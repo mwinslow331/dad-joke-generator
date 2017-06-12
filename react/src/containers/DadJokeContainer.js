@@ -32,9 +32,9 @@ class DadJokeContainer extends Component {
   render() {
     return(
       <div className='row'>
-        <div className='jokes columns small-12 text-center small-centered'>
-          <h4>{this.state.selectedDadJoke.joke}</h4>
-          <div className='button' onClick={this.handleRandomJoke}>Click for Random Dad Joke!</div>
+        <div className='columns small-12 text-center small-centered'>
+          <h4 className='jokes'>{this.state.selectedDadJoke.joke}</h4>
+          <div className='button joke-button' onClick={this.handleRandomJoke}>Click for Random Dad Joke!</div>
         </div>
       </div>
     )
