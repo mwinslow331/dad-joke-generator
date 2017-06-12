@@ -15,3 +15,9 @@
  *= require foundation_and_overrides
 
  */
+
+.jokes {
+  position: absolute;
+  top: 30%;
+  margin: 0 auto;
+}
