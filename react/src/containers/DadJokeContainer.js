@@ -19,9 +19,6 @@ class DadJokeContainer extends Component {
       .then(responseData => {
         let totalAmount = responseData.data.children.length
         let jokeChildren = responseData.data.children
-        for (i = 0; i < totalAmount; i++) {
-          this.setState(dadJokes: jokeChildren[i].data);
-          }
         })
       }
 
