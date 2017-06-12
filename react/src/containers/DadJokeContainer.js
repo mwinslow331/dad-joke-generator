@@ -6,7 +6,8 @@ class DadJokeContainer extends Component {
     super(props);
     this.state = {
       dadJokes: {},
-      rand: 0
+      rand: 0,
+      selectedDadJoke: {}
     }
     this.handleRandomJoke = this.handleRandomJoke.bind(this)
   }
@@ -14,7 +15,10 @@ class DadJokeContainer extends Component {
   handleRandomJoke(event) {
     let totalDadJokes = this.state.dadJokes.length
     let randNum = Math.floor((Math.random()) * totalDadJokes)
-    this.setState({ rand: randNum})
+    this.setState({
+      rand: randNum,
+      selectedDadJoke: this.state.dadJokes[randNum]
+    })
   }
 
   componentDidMount() {
@@ -26,14 +30,9 @@ class DadJokeContainer extends Component {
       }
 
   render() {
-    let singleJoke = this.state.dadJokes.map(joke => {
-      <DadJoke
-        joke={joke.joke}
-      />
-    })
     return(
       <div>
-        <h4>{singleJoke}</h4>
+        <h4>{this.state.selectedDadJoke.joke}</h4>
         <button onClick={this.handleRandomJoke}>Click for Random Dad Joke!</button>
       </div>
     )
