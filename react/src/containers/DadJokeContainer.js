@@ -31,18 +31,26 @@ class DadJokeContainer extends Component {
       .then(responseData => {
         this.setState({ dadJokes: responseData})
       })
-      }
+    }
 
   render() {
     return(
-      <div className='row'>
-        <div className='columns small-12 text-center small-centered'>
-          <div className='jokes'>
-            <div className='center-joke-text'>
-              <h4>{this.state.selectedDadJoke.joke}</h4>
+      <div className='page-container'>
+        <div className='row'>
+          <div className='columns small-12 text-center small-centered'>
+            <h4 className='joke-cta' onClick={this.handleRandomJoke}>
+              Click here for a Random Joke!
+            </h4>
+          </div>
+        </div>
+        <div className='row'>
+          <div className='columns small-12 text-center small-centered'>
+            <div className='joke-card'>
+              <div className='joke-text'>
+                <h4>{this.state.selectedDadJoke.joke}</h4>
+              </div>
             </div>
           </div>
-          <div className='joke-button' onClick={this.handleRandomJoke}>Click for Random Dad Joke!</div>
         </div>
       </div>
     )
